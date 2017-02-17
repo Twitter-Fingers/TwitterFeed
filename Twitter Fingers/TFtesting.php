@@ -1,9 +1,4 @@
 <?php
-
-
-echo "<p>Practice App</p>";
-
-
 require "twitteroauth/autoload.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
@@ -22,13 +17,22 @@ $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $
 //$statues = $connection->post("statuses/update", ["status" => "Posted a tweet using an API :D"]);
 
 $query = array(
-  "q" => "#obama"
+  "q" => "#stock"
 );
  
 $results = $connection->get('search/tweets', $query);
- 
-foreach ($results->statuses as $result) {
-  echo $result->user->screen_name . ": " . $result->text . "\n";
+/*
+function returnTweets(){
+	$results = $connection->get('search/tweets', $query);
+	return "$results" + "<br>";
 }
+*/
+//echo "$results->text . <br>";
+foreach ($results->statuses as $result) {
+	echo "<tr></tr><td><font color = black>" . $result->user->screen_name . ": </td><td><font color = black>" . $result->text . "</td><tr></tr>";
+
+}
+
+
 
 ?>
