@@ -18,13 +18,7 @@
 	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<?php
 	   // connect to mongodb
-	   $m = new MongoClient();
-		
-	   echo "Connection to database successfully";
-	   // select a database
-	   //$db = $m->mydb;
-		
-	   //echo "Database mydb selected";
+	  require "MDBTesting.php";
 	?>
 </body>
 
